@@ -72,31 +72,31 @@ class NeumorphicApp extends StatelessWidget {
     this.actions,
   }) : super(key: key);
 
-  ThemeData _getMaterialTheme(NeumorphicThemeData theme) {
-    final color = theme.accentColor;
+  // ThemeData _getMaterialTheme(NeumorphicThemeData theme) {
+  //   final color = theme.accentColor;
 
-    if (color is MaterialColor) {
-      return ThemeData(
-        primarySwatch: color,
-        textTheme: theme.textTheme,
-        iconTheme: theme.iconTheme,
-        scaffoldBackgroundColor: theme.baseColor,
-      );
-    }
+  //   if (color is MaterialColor) {
+  //     return ThemeData(
+  //       primarySwatch: color,
+  //       textTheme: theme.textTheme,
+  //       iconTheme: theme.iconTheme,
+  //       scaffoldBackgroundColor: theme.baseColor,
+  //     );
+  //   }
 
-    return ThemeData(
-      primaryColor: theme.accentColor,
-      accentColor: theme.variantColor,
-      iconTheme: theme.iconTheme,
-      brightness: ThemeData.estimateBrightnessForColor(theme.baseColor),
-      primaryColorBrightness:
-          ThemeData.estimateBrightnessForColor(theme.accentColor),
-      accentColorBrightness:
-          ThemeData.estimateBrightnessForColor(theme.variantColor),
-      textTheme: theme.textTheme,
-      scaffoldBackgroundColor: theme.baseColor,
-    );
-  }
+  //   return ThemeData(
+  //     primaryColor: theme.accentColor,
+  //     accentColor: theme.variantColor,
+  //     iconTheme: theme.iconTheme,
+  //     brightness: ThemeData.estimateBrightnessForColor(theme.baseColor),
+  //     primaryColorBrightness:
+  //         ThemeData.estimateBrightnessForColor(theme.accentColor),
+  //     accentColorBrightness:
+  //         ThemeData.estimateBrightnessForColor(theme.variantColor),
+  //     textTheme: theme.textTheme,
+  //     scaffoldBackgroundColor: theme.baseColor,
+  //   );
+  // }
 
   @override
   Widget build(BuildContext context) {
