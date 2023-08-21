@@ -7,7 +7,7 @@ class NeumorphicApp extends StatelessWidget {
   final NeumorphicThemeData theme;
   final NeumorphicThemeData darkTheme;
   final ThemeData? materialDarkTheme;
-  final ThemeData? materialTheme;
+  final ThemeData materialTheme;
   final String? initialRoute;
   final Color? color;
   final Iterable<LocalizationsDelegate<dynamic>>? localizationsDelegates;
@@ -57,7 +57,7 @@ class NeumorphicApp extends StatelessWidget {
     this.supportedLocales = const <Locale>[Locale('en', 'US')],
     this.themeMode = ThemeMode.system,
     this.materialDarkTheme,
-    this.materialTheme,
+    required this.materialTheme,
     this.builder,
     this.localeResolutionCallback,
     this.highContrastTheme,
@@ -100,9 +100,11 @@ class NeumorphicApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final materialTheme = this.materialTheme ?? _getMaterialTheme(theme);
-    final materialDarkTheme =
-        this.materialDarkTheme ?? _getMaterialTheme(darkTheme);
+    // final materialTheme = this.materialTheme ?? _getMaterialTheme(theme);
+    // final materialDarkTheme =
+    //     this.materialDarkTheme ?? _getMaterialTheme(darkTheme);
+    final materialTheme = this.materialTheme;
+    final materialDarkTheme = this.materialDarkTheme ?? this.materialTheme;
     return NeumorphicTheme(
       theme: theme,
       darkTheme: darkTheme,
